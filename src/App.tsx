@@ -63,8 +63,8 @@ import Billing from "./pages/System/Billing";
 import BillingVerify from "./pages/System/BillingVerify";
 import PlatformBilling from "./pages/System/PlatformBilling";
 import WardsAdmin from "./pages/System/WardsAdmin";
-import SifarisAdmin from "./pages/Services/SifarisAdmin";
-import SifarisList from "./pages/Services/SifarisList";
+// import SifarisAdmin from "./pages/Services/SifarisAdmin";
+// import SifarisList from "./pages/Services/SifarisList";
 import ServiceCatalog from "./pages/ServiceCatalog/ServiceCatalog";
 import Clients from "./pages/Clients/Clients";
 import StaffDirectory from "./pages/Staff/StaffDirectory";
@@ -265,8 +265,8 @@ export default function App() {
                 <Route path="/verify/:hash" element={<VerifyDocument />} />
 
                 {/* Auth Layout */}
-                <Route path="/sifaris" element={<SifarisList />} />
-                <Route path="/sifaris/admin" element={<SifarisAdmin />} />
+{/* //                 <Route path="/sifaris" element={<SifarisList />} /> */}
+{/* //                 <Route path="/sifaris/admin" element={<SifarisAdmin />} /> */}
 
                 <Route path="/signin" element={<SignIn />} />
                 <Route path="/login" element={<OTPLogin />} />

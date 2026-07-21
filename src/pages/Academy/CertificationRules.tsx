@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PageBreadcrumb from "../../components/common/PageBreadCrumb";
-import api from "../../utils/api";
+import api from "../../api/axios";
 
 const CertificationRules: React.FC = () => {
   const [courses, setCourses] = useState<any[]>([]);
@@ -10,7 +10,7 @@ const CertificationRules: React.FC = () => {
   const [ruleType, setRuleType] = useState("supervised_count");
   const [thresholdValue, setThresholdValue] = useState(1);
   const [targetCurriculumItemId, setTargetCurriculumItemId] = useState("");
-  const [curriculumItems, setCurriculumItems] = useState<any[]>([]);
+  
 
   useEffect(() => {
     // Fetch courses to select from

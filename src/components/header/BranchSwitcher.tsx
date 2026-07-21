@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useAuth } from "../../context/AuthContext";
-import { ChevronDownIcon, GridIcon } from "../../icons"; // Assuming GridIcon or similar exists
+import { ChevronDownIcon } from "../../icons"; // Assuming GridIcon or similar exists
 
 const BranchSwitcher: React.FC = () => {
   const { user, updateUser } = useAuth();

@@ -1,16 +1,21 @@
 import React, { useState, useEffect } from "react";
 import PageBreadcrumb from "../../components/common/PageBreadCrumb";
-import api from "../../utils/api";
+import api from "../../api/axios";
 import { Modal } from "../../components/ui/modal";
+import { useAuth } from "../../context/AuthContext";
 
 const ClientPortal: React.FC = () => {
   const [appointments, setAppointments] = useState<any[]>([]);
   const [invoices, setInvoices] = useState<any[]>([]);
   
+  const { user } = useAuth();
+  const [recommendations, setRecommendations] = useState<any[]>([]);
+  
+
   // Booking Form State
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
   const [serviceId, setServiceId] = useState("");
-  const [practitionerPersonId, setPractitionerPersonId] = useState("");
+  const [practitionerPersonId] = useState("");
   const [startDatetime, setStartDatetime] = useState("");
   
   // Dummy data for dropdowns (in a real app, fetch from `/services` and `/staff`)
@@ -24,7 +29,7 @@ const ClientPortal: React.FC = () => {
       try {
         const [appRes, recRes, invRes] = await Promise.all([
           api.get("/portal/client/appointments"),
-          api.get(`/ai/recommendations/${user?.personId}`),
+          api.get(`/ai/recommendations/${(user as any)?.personId}`),
           api.get("/portal/client/invoices")
         ]);
 
@@ -40,10 +45,10 @@ const ClientPortal: React.FC = () => {
       } catch (e) {
         console.error(e);
       } finally {
-        setLoading(false);
+        
       }
     };
-    if (user?.personId) {
+    if ((user as any)?.personId) {
       fetchData();
     }
   }, [user]);
@@ -51,7 +56,7 @@ const ClientPortal: React.FC = () => {
   const handleDismissRec = async (id: string) => {
     try {
       await api.patch(`/ai/recommendations/${id}/dismiss`);
-      setRecommendations(recommendations.filter(r => r._id !== id));
+      setRecommendations(recommendations.filter((r: any) => r._id !== id));
     } catch (e) {
       console.error(e);
     }
@@ -71,7 +76,10 @@ const ClientPortal: React.FC = () => {
         scheduledEnd: end
       });
       setIsBookingModalOpen(false);
-      fetchAppointments();
+      const appRes = await api.get("/portal/client/appointments");
+      if (appRes.data.success) {
+        setAppointments(appRes.data.data);
+      }
       alert("Appointment booked successfully!");
     } catch (e: any) {
       alert(e.response?.data?.message || "Failed to book appointment");
@@ -156,7 +164,7 @@ const ClientPortal: React.FC = () => {
             <span className="text-xl">✨</span> Suggested for You
           </h2>
           <div className="space-y-4">
-            {recommendations.map(rec => (
+            {recommendations.map((rec: any) => (
               <div key={rec._id} className="bg-white/80 p-4 rounded-xl border border-white flex justify-between items-center shadow-sm backdrop-blur-sm">
                 <div>
                   <h4 className="font-bold text-gray-800">{rec.recommendedServiceId?.name || "Complementary Service"}</h4>

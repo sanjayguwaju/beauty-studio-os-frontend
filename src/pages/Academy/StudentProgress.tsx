@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PageBreadcrumb from "../../components/common/PageBreadCrumb";
 import { useAuth } from "../../context/AuthContext";
-import api from "../../utils/api";
+import api from "../../api/axios";
 
 const StudentProgress: React.FC = () => {
   const { user } = useAuth();
@@ -18,8 +18,8 @@ const StudentProgress: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (selectedCourse && user?.personId) {
-      api.get(`/certifications/status/${selectedCourse}/${user.personId}`).then(res => {
+    if (selectedCourse && (user as any)?.personId) {
+      api.get(`/certifications/status/${selectedCourse}/${(user as any)?.personId}`).then(res => {
         if (res.data.success) {
           setProgressStatus(res.data.data);
         }

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
-import api from "../../utils/api";
+import { useNavigate, Link } from "react-router";
+import api from "../../api/axios";
 
 const Signup: React.FC = () => {
   const navigate = useNavigate();

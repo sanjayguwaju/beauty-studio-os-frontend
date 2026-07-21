@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PageBreadcrumb from "../../components/common/PageBreadCrumb";
-import api from "../../utils/api";
+import api from "../../api/axios";
 
 const CommissionsReport: React.FC = () => {
   const [commissions, setCommissions] = useState<any[]>([]);

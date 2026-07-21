@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PageBreadcrumb from "../../components/common/PageBreadCrumb";
-import api from "../../utils/api";
+import api from "../../api/axios";
 
 const AnalyticsDashboard: React.FC = () => {
   const [kpis, setKpis] = useState<any>(null);
@@ -27,7 +27,7 @@ const AnalyticsDashboard: React.FC = () => {
   }, [startDate, endDate]);
 
   const handleExport = (type: string) => {
-    let url = `${process.env.REACT_APP_API_URL || "http://localhost:5000"}/api/v1/reports/export?type=${type}`;
+    let url = `${import.meta.env.VITE_API_URL || "http://localhost:5000"}/api/v1/reports/export?type=${type}`;
     if (startDate) url += `&startDate=${startDate}`;
     if (endDate) url += `&endDate=${endDate}`;
     window.open(url, '_blank');

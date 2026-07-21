@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PageBreadcrumb from "../../components/common/PageBreadCrumb";
-import api from "../../utils/api";
+import api from "../../api/axios";
 
 interface Enrollment {
   _id: string;
@@ -10,10 +10,7 @@ interface Enrollment {
   };
 }
 
-interface AttendanceRecord {
-  studentPersonId: string;
-  status: "present" | "absent" | "excused";
-}
+
 
 const AttendanceTracker: React.FC = () => {
   const [batches, setBatches] = useState<any[]>([]);

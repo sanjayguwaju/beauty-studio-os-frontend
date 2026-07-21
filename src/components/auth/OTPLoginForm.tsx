@@ -1,8 +1,9 @@
+import { Link } from "react-router";
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../../context/AuthContext";
-import { toast } from "react-toastify";
-import { EyeCloseIcon, EyeIcon } from "../../icons";
+
+
+import { toast } from "react-hot-toast";
+
 import Label from "../form/Label";
 import Input from "../form/input/InputField";
 import Button from "../ui/button/Button";
@@ -12,8 +13,8 @@ export default function OTPLoginForm() {
   const [otp, setOtp] = useState("");
   const [step, setStep] = useState<"request" | "verify">("request");
   const [loading, setLoading] = useState(false);
-  const { login } = useAuth(); // Assuming we expose an OTP login method, or we use a fetch call
-  const navigate = useNavigate();
+   // Assuming we expose an OTP login method, or we use a fetch call
+  
 
   const handleRequestOTP = async (e: React.FormEvent) => {
     e.preventDefault();

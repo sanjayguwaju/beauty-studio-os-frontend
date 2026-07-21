@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PageBreadcrumb from "../../components/common/PageBreadCrumb";
-import api from "../../utils/api";
+import api from "../../api/axios";
 
 const CommunicationCenter: React.FC = () => {
   const [audience, setAudience] = useState("all_clients");

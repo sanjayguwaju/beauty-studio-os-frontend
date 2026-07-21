@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from "react";
 import api from "../../api/axios";
 import { toast } from "react-hot-toast";
-import { Search, Download, MoreVertical, Edit2, Eye, Trash2, Pause, Play } from "lucide-react";
+import { Search, Download, MoreVertical, Edit2, Eye, Trash2, Pause, Play, UserCircle } from "lucide-react";
 import { Pagination } from "../../components/ui/pagination";
 import Badge from "../../components/ui/badge/Badge";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";

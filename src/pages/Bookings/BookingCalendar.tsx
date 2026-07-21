@@ -4,27 +4,24 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import { DateSelectArg, EventClickArg } from "@fullcalendar/core";
-import { io, Socket } from "socket.io-client";
-import { useAuth } from "../../context/AuthContext";
+import { io } from "socket.io-client";
+
 import PageBreadcrumb from "../../components/common/PageBreadCrumb";
 import { Modal } from "../../components/ui/modal";
-import api from "../../utils/api";
+import api from "../../api/axios";
 
 const BookingCalendar: React.FC = () => {
-  const { user } = useAuth();
+
   const calendarRef = useRef<FullCalendar>(null);
   const [events, setEvents] = useState<any[]>([]);
-  const [socket, setSocket] = useState<Socket | null>(null);
+
   
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSessionModalOpen, setIsSessionModalOpen] = useState(false);
 
   // Form states
   const [selectedAppointment, setSelectedAppointment] = useState<any>(null);
-  const [clientName, setClientName] = useState("");
-  const [serviceName, setServiceName] = useState("");
   const [practitionerRole, setPractitionerRole] = useState("stylist");
-  const [supervisingInstructor, setSupervisingInstructor] = useState("");
   const [startDatetime, setStartDatetime] = useState("");
   const [endDatetime, setEndDatetime] = useState("");
   
@@ -38,7 +35,7 @@ const BookingCalendar: React.FC = () => {
   useEffect(() => {
     fetchAppointments();
 
-    const newSocket = io(process.env.REACT_APP_API_URL || "http://localhost:5000", {
+    const newSocket = io(import.meta.env.VITE_API_URL || "http://localhost:5000", {
       withCredentials: true,
       auth: { token: localStorage.getItem("accessToken") }
     });
@@ -47,15 +44,15 @@ const BookingCalendar: React.FC = () => {
       console.log("Connected to socket server");
     });
 
-    newSocket.on("appointment_created", (appointment) => {
+    newSocket.on("appointment_created", (_appointment) => {
       fetchAppointments();
     });
 
-    newSocket.on("appointment_updated", (appointment) => {
+    newSocket.on("appointment_updated", (_appointment) => {
       fetchAppointments();
     });
 
-    setSocket(newSocket);
+
     fetchProducts();
 
     return () => {

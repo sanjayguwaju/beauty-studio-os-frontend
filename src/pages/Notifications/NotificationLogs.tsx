@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PageBreadcrumb from "../../components/common/PageBreadCrumb";
-import api from "../../utils/api";
-import { io, Socket } from "socket.io-client";
+import api from "../../api/axios";
+import { io } from "socket.io-client";
 
 const NotificationLogs: React.FC = () => {
   const [logs, setLogs] = useState<any[]>([]);
@@ -9,7 +9,7 @@ const NotificationLogs: React.FC = () => {
   useEffect(() => {
     fetchLogs();
 
-    const socket = io(process.env.REACT_APP_API_URL || "http://localhost:5000", {
+    const socket = io(import.meta.env.VITE_API_URL || "http://localhost:5000", {
       withCredentials: true,
       auth: { token: localStorage.getItem("accessToken") }
     });
