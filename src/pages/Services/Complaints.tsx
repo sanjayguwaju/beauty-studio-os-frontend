@@ -6,7 +6,7 @@ export default function Complaints() {
   return (
     <>
       <PageMeta
-        title="Complaints | PalikaOS"
+        title="Complaints | BeautyStudio OS"
         description="Manage and track citizen complaints"
       />
       <PageBreadcrumb pageTitle="Complaints" />

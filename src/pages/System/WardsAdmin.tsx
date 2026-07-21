@@ -5,15 +5,15 @@ export default function WardsAdmin() {
   return (
     <div className="space-y-6">
       <Helmet>
-        <title>Ward Management | PalikaOS</title>
+        <title>Branch Management | BeautyStudio OS</title>
       </Helmet>
 
       <div>
         <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
-          Ward Management
+          Branch Management
         </h1>
         <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
-          Add, edit, and manage wards within your municipality.
+          Add, edit, and manage branches within your studio.
         </p>
       </div>
 

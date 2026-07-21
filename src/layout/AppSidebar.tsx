@@ -63,9 +63,9 @@ const navItems: NavItem[] = [
   },
   {
     icon: <UserIcon />,
-    name: "sidebar.citizens",
-    path: "/citizens",
-    subject: "citizens",
+    name: "Clients",
+    path: "/clients",
+    subject: "ClientProfile",
   },
   {
     icon: <GridIcon />,
@@ -222,13 +222,12 @@ const navItems: NavItem[] = [
     icon: <GridIcon />,
     name: "Admin Dashboard",
     path: "/administrator",
-    requiredRole: "cao", // Or could use municipality_admin
+    requiredRole: "studio_admin",
   },
   {
     icon: <GridIcon />,
     name: "Branding",
     path: "/settings/branding",
-    // No specific subject needed if we just check for municipality_admin in UI
   },
   {
     icon: <GridIcon />,
@@ -566,7 +565,7 @@ const AppSidebar: React.FC = () => {
                 />
               )}
               <h1 className="text-lg font-bold text-gray-900 dark:text-white truncate">
-                {branding?.name || "PalikaOS"}
+                {branding?.name || "BeautyStudio OS"}
               </h1>
             </>
           ) : (

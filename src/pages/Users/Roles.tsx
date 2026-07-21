@@ -8,8 +8,8 @@ export default function Roles() {
   return (
     <>
       <PageMeta
-        title={`${t("roles.page_title")} | PalikaOS`}
-        description="Manage system roles and permissions for PalikaOS"
+        title={`${t("roles.page_title")} | BeautyStudio OS`}
+        description="Manage system roles and permissions for BeautyStudio OS"
       />
       <PageBreadcrumb pageTitle={t("roles.page_title")} />
       <div className="space-y-6">

@@ -6,7 +6,7 @@ export default function ServiceRequests() {
   return (
     <>
       <PageMeta
-        title="Service Requests | PalikaOS"
+        title="Service Requests | BeautyStudio OS"
         description="Manage and track citizen service requests"
       />
       <PageBreadcrumb pageTitle="Service Requests" />

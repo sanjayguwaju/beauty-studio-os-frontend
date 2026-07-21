@@ -57,7 +57,7 @@ export const WardFormModal: React.FC<WardFormProps> = ({
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label className={labelClass}>Ward Number *</label>
+          <label className={labelClass}>Branch Number *</label>
           <input
             type="number"
             name="wardNumber"

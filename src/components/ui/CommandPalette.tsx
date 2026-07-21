@@ -17,12 +17,12 @@ interface CommandItem {
 const COMMANDS: CommandItem[] = [
   { id: "nav-dashboard", name: "Dashboard", route: "/", icon: <LayoutDashboard size={16} />, category: "Navigation" },
   { id: "nav-users", name: "Users", route: "/users", icon: <User size={16} />, category: "Navigation" },
-  { id: "nav-citizens", name: "Citizens", route: "/citizens", icon: <Users size={16} />, category: "Navigation" },
-  { id: "nav-wards", name: "Wards", route: "/wards", icon: <MapPin size={16} />, category: "Navigation" },
+  { id: "nav-clients", name: "Clients", route: "/clients", icon: <Users size={16} />, category: "Navigation" },
+  { id: "nav-staff", name: "Staff", route: "/staff", icon: <MapPin size={16} />, category: "Navigation" },
   { id: "nav-settings", name: "System Settings", route: "/system/settings", icon: <Settings size={16} />, category: "Navigation" },
   { id: "nav-branding", name: "Branding Settings", route: "/system/branding", icon: <Building size={16} />, category: "Navigation" },
   { id: "action-add-user", name: "Add New User", route: "/users?action=new", icon: <User size={16} />, category: "Actions" },
-  { id: "action-add-citizen", name: "Add New Citizen", route: "/citizens?action=new", icon: <Users size={16} />, category: "Actions" },
+  { id: "action-add-client", name: "Add New Client", route: "/clients?action=new", icon: <Users size={16} />, category: "Actions" },
 ];
 
 export const CommandPalette: React.FC = () => {
@@ -134,7 +134,7 @@ export const CommandPalette: React.FC = () => {
             </span>
           </div>
           <div className="flex items-center gap-1.5 font-medium text-gray-400">
-            PalikaOS Command Palette
+            BeautyStudio OS Command Palette
           </div>
         </div>
       </Command>

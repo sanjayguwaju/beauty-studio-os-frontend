@@ -3,7 +3,7 @@ import { MessageSquare, Users, BookOpen, HeartHandshake, ChevronRight, MessageCi
 const communityLinks = [
   {
     title: "Community Forums",
-    description: "Ask questions, share solutions, and discuss best practices with other PalikaOS administrators.",
+    description: "Ask questions, share solutions, and discuss best practices with other BeautyStudio OS studio owners.",
     icon: MessageSquare,
     action: "Visit Forums",
     color: "bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400",
@@ -17,14 +17,14 @@ const communityLinks = [
   },
   {
     title: "GitHub Discussions",
-    description: "Contribute to PalikaOS, suggest features, and track the development roadmap.",
+    description: "Contribute to BeautyStudio OS, suggest features, and track the development roadmap.",
     icon: Code,
     action: "View GitHub",
     color: "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-300",
   },
   {
     title: "User Groups & Meetups",
-    description: "Find or host local government tech meetups in your province or district.",
+    description: "Find or host beauty tech meetups in your area.",
     icon: Users,
     action: "Find Events",
     color: "bg-emerald-50 text-emerald-600 dark:bg-emerald-900/20 dark:text-emerald-400",
@@ -41,10 +41,10 @@ export default function CommunityPage() {
             <HeartHandshake className="h-8 w-8" />
           </div>
           <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl mb-6">
-            Join the PalikaOS Community
+            Join the BeautyStudio OS Community
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            Connect with other municipalities, share best practices, and help shape the future of local government technology in Nepal.
+            Connect with other studio owners, share best practices, and help shape the future of beauty tech.
           </p>
         </div>
       </div>
@@ -103,7 +103,7 @@ export default function CommunityPage() {
                 </li>
                 <li className="flex items-start">
                   <div className="h-7 w-7 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 flex items-center justify-center font-bold text-sm mr-4 mt-0.5 shrink-0">✓</div>
-                  <span className="text-gray-700 dark:text-gray-300 text-lg">Keep discussions constructive and focused on municipality governance and technology.</span>
+                  <span className="text-gray-700 dark:text-gray-300 text-lg">Keep discussions constructive and focused on beauty studio operations and technology.</span>
                 </li>
               </ul>
               <a href="#" className="inline-flex items-center justify-center px-8 py-4 border border-gray-300 dark:border-gray-600 shadow-sm text-base font-bold rounded-xl text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">

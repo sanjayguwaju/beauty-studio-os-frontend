@@ -6,8 +6,8 @@ export default function ResetPassword() {
   return (
     <>
       <PageMeta
-        title="Reset Password | PalikaOS"
-        description="Set a new password for PalikaOS"
+        title="Reset Password | BeautyStudio OS"
+        description="Set a new password for BeautyStudio OS"
       />
       <AuthLayout>
         <ResetPasswordForm />

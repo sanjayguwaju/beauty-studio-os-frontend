@@ -13,7 +13,7 @@ export default function PricingPage() {
           {/* Basic Plan */}
           <div className="bg-white dark:bg-gray-800 p-8 rounded-3xl border border-gray-200 dark:border-gray-700 shadow-sm flex flex-col mt-4 md:mt-0">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Basic</h3>
-            <p className="text-gray-500 dark:text-gray-400 mb-6">For Rural Municipalities (Gaupalikas)</p>
+            <p className="text-gray-500 dark:text-gray-400 mb-6">For Independent Studios</p>
             <div className="mb-6"><span className="text-4xl font-extrabold text-gray-900 dark:text-white">रु 50,000</span><span className="text-gray-500">/year</span></div>
             <ul className="mb-8 space-y-4 flex-1">
               <li className="flex items-center text-gray-600 dark:text-gray-400"><CheckCircle className="w-5 h-5 text-green-500 mr-3"/> Up to 9 Wards</li>

@@ -158,7 +158,7 @@ export default function Home() {
 
   return (
     <>
-      <PageMeta title="Dashboard | PalikaOS" description="Municipality Management System — Dashboard overview" />
+      <PageMeta title="Dashboard | BeautyStudio OS" description="Studio Management System — Dashboard overview" />
       
       {/* Tabs */}
       <div className="flex overflow-x-auto border-b border-gray-200 dark:border-gray-700 mb-6 hide-scrollbar">

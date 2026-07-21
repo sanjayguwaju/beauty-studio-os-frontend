@@ -28,7 +28,7 @@ export default function RegisterMunicipality() {
         setSuccess(true);
       }
     } catch (err: any) {
-      setError(err.response?.data?.message || "Failed to register municipality");
+      setError(err.response?.data?.message || "Failed to register studio");
     } finally {
       setLoading(false);
     }
@@ -40,7 +40,7 @@ export default function RegisterMunicipality() {
         <div className="text-center">
           <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white">Register Workspace</h2>
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-            Create a dedicated environment for your municipality.
+            Create a dedicated environment for your studio.
           </p>
         </div>
 
@@ -59,7 +59,7 @@ export default function RegisterMunicipality() {
             )}
             <div className="space-y-4">
               <div>
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Municipality Name</label>
+                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Studio Name</label>
                 <input
                   type="text"
                   name="name"

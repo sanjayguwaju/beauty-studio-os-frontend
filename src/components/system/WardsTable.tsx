@@ -80,7 +80,7 @@ export default function WardsTable() {
       setIsFormOpen(false);
       fetchWards();
     } catch (err: any) {
-      alert("Error saving ward: " + (err.response?.data?.message || err.message));
+      alert("Error saving branch: " + (err.response?.data?.message || err.message));
     } finally {
       setIsSubmitting(false);
     }
@@ -104,7 +104,7 @@ export default function WardsTable() {
 
   const columns = useMemo(() => [
     columnHelper.accessor("wardNumber", {
-      header: "Ward No.",
+      header: "Branch No.",
       cell: (info) => (
         <span className="font-medium text-gray-800 dark:text-white/90">
           {info.getValue()}
@@ -182,14 +182,14 @@ export default function WardsTable() {
       <div className="overflow-hidden rounded-xl border border-gray-200 bg-white dark:border-white/5 dark:bg-white/3">
       <div className="flex items-center justify-between p-5 border-b border-gray-100 dark:border-white/5">
         <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">
-          All Wards
+          All Branches
         </h3>
         <Can I="create" a="system">
           <button 
             onClick={handleAddClick}
             className="px-4 py-2 text-sm font-medium text-white bg-brand-500 rounded-lg hover:bg-brand-600"
           >
-            Add Ward
+            Add Branch
           </button>
         </Can>
       </div>
@@ -200,7 +200,7 @@ export default function WardsTable() {
       <FormModal
         isOpen={isFormOpen}
         onClose={() => setIsFormOpen(false)}
-        title={selectedWard ? "Edit Ward" : "Add Ward"}
+        title={selectedWard ? "Edit Branch" : "Add Branch"}
       >
         <WardFormModal
           initialData={selectedWard ? {

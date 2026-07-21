@@ -8,8 +8,8 @@ export default function Users() {
   return (
     <>
       <PageMeta
-        title={`${t("users.page_title")} | PalikaOS`}
-        description="Manage system users for PalikaOS"
+        title={`${t("users.page_title")} | BeautyStudio OS`}
+        description="Manage system users for BeautyStudio OS"
       />
       <PageBreadcrumb pageTitle={t("users.page_title")} />
       <div className="space-y-6">

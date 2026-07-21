@@ -8,8 +8,8 @@ export default function Citizens() {
   return (
     <>
       <PageMeta
-        title={`${t("citizens.page_title")} | PalikaOS`}
-        description="Manage municipality citizens for PalikaOS"
+        title={`${t("citizens.page_title")} | BeautyStudio OS`}
+        description="Manage municipality citizens for BeautyStudio OS"
       />
       <PageBreadcrumb pageTitle={t("citizens.page_title")} />
       <div className="space-y-6">

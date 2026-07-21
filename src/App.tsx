@@ -121,7 +121,7 @@ export default function App() {
   } else if (parts.length > 2) {
     subdomain = parts[0];
   }
-  const isNakedDomain = !subdomain || subdomain === "www" || subdomain === "app" || subdomain === "palikaos";
+  const isNakedDomain = !subdomain || subdomain === "www" || subdomain === "app" || subdomain === "beautystudioos";
 
   return (
     <>
