@@ -8,6 +8,14 @@ import ResetPassword from "./pages/AuthPages/ResetPassword";
 import OTPLogin from "./pages/AuthPages/OTPLogin";
 import NotFound from "./pages/OtherPage/NotFound";
 import UserProfiles from "./pages/UserProfiles";
+
+import Messages from "./pages/Messages/Messages";
+import Integrations from "./pages/Integrations/Integrations";
+import PointOfSale from "./pages/POS/PointOfSale";
+import StaffPayroll from "./pages/Payroll/StaffPayroll";
+import Campaigns from "./pages/Marketing/Campaigns";
+import BookingPortal from "./pages/Public/BookingPortal";
+import AcademyEnrollment from "./pages/Public/AcademyEnrollment";
 import Videos from "./pages/UiElements/Videos";
 import Images from "./pages/UiElements/Images";
 import Alerts from "./pages/UiElements/Alerts";
@@ -170,7 +178,15 @@ export default function App() {
                   <Route path="/complaints" element={<ProtectedRoute action="read" subject="complaints"><Complaints /></ProtectedRoute>} />
                   <Route path="/correspondence" element={<ProtectedRoute action="read" subject="correspondence"><Correspondence /></ProtectedRoute>} />
                   <Route path="/notifications" element={<ProtectedRoute action="read" subject="notifications"><Notifications /></ProtectedRoute>} />
-                  <Route path="/audit-logs" element={<ProtectedRoute action="read" subject="audit_logs"><AuditLogs /></ProtectedRoute>} />
+                  <Route path="/system/audit-logs" element={<ProtectedRoute action="read" subject="audit"><AuditLogs /></ProtectedRoute>} />
+
+                  {/* Integrations */}
+                  <Route path="/messages" element={<ProtectedRoute action="read" subject="system"><Messages /></ProtectedRoute>} />
+                  <Route path="/pos" element={<ProtectedRoute action="read" subject="system"><PointOfSale /></ProtectedRoute>} />
+                  <Route path="/payroll" element={<ProtectedRoute action="read" subject="system"><StaffPayroll /></ProtectedRoute>} />
+                  <Route path="/marketing" element={<ProtectedRoute action="read" subject="system"><Campaigns /></ProtectedRoute>} />
+                  <Route path="/system/integrations" element={<ProtectedRoute action="manage" subject="system"><Integrations /></ProtectedRoute>} />
+                  
                   <Route path="/approvals" element={<ProtectedRoute action="read" subject="ApprovableDocument"><Approvals /></ProtectedRoute>} />
                   <Route path="/feature-flags" element={<ProtectedRoute action="manage" subject="FeatureFlag"><FeatureFlagsAdmin /></ProtectedRoute>} />
                   <Route path="/administrator" element={<ProtectedRoute><TenantAdminDashboard /></ProtectedRoute>} />
@@ -267,8 +283,11 @@ export default function App() {
                 {/* Auth Layout */}
 {/* //                 <Route path="/sifaris" element={<SifarisList />} /> */}
 {/* //                 <Route path="/sifaris/admin" element={<SifarisAdmin />} /> */}
-
-                <Route path="/signin" element={<SignIn />} />
+        {/* Public / Auth Routes */}
+        <Route path="/book" element={<BookingPortal />} />
+        <Route path="/academy-enroll" element={<AcademyEnrollment />} />
+        
+        <Route path="/signin" element={<SignIn />} />
                 <Route path="/login" element={<OTPLogin />} />
                 <Route path="/forgot-password" element={<ForgotPassword />} />
                 <Route path="/reset-password" element={<ResetPassword />} />

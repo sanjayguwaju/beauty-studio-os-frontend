@@ -21,6 +21,7 @@ import {
   FolderIcon,
   EnvelopeIcon,
   ChatIcon,
+  WalletIcon,
 } from "../icons";
 import { useSidebar } from "../context/SidebarContext";
 import { useTenant } from "../context/TenantContext";
@@ -49,6 +50,30 @@ const navItems: NavItem[] = [
     name: "Analytics",
     path: "/analytics",
     subject: "Report",
+  },
+  {
+    icon: <BoxCubeIcon />,
+    name: "Point of Sale",
+    path: "/pos",
+    subject: "system",
+  },
+  {
+    icon: <WalletIcon />,
+    name: "Payroll",
+    path: "/payroll",
+    subject: "system",
+  },
+  {
+    icon: <EnvelopeIcon />,
+    name: "Marketing",
+    path: "/marketing",
+    subject: "system",
+  },
+  {
+    icon: <ChatIcon />,
+    name: "Messages",
+    path: "/messages",
+    subject: "system",
   },
   {
     icon: <CheckCircleIcon />,
@@ -238,6 +263,12 @@ const navItems: NavItem[] = [
     icon: <GridIcon />,
     name: "Developer",
     path: "/settings/developer",
+  },
+  {
+    icon: <GridIcon />,
+    name: "Integrations",
+    path: "/system/integrations",
+    subject: "system",
   },
   {
     icon: <PieChartIcon />,
