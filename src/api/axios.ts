@@ -31,7 +31,7 @@ api.interceptors.request.use(
     }
 
     // Ignore 'app' or 'www' subdomains as they might be used for the naked/landing page
-    if (subdomain && subdomain !== "app" && subdomain !== "www") {
+    if (subdomain && subdomain !== "app" && subdomain !== "www" && subdomain !== "beautyxos") {
       config.headers["X-Tenant-Subdomain"] = subdomain;
     }
 
