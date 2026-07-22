@@ -70,6 +70,12 @@ const navItems: NavItem[] = [
     subject: "system",
   },
   {
+    icon: <CheckCircleIcon />,
+    name: "Loyalty",
+    path: "/loyalty",
+    subject: "system",
+  },
+  {
     icon: <ChatIcon />,
     name: "Messages",
     path: "/messages",
