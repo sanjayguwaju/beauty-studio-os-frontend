@@ -62,10 +62,16 @@ export default function PointOfSale() {
   const removeFromCart = (id: string) => {
     setCart(prev => prev.filter(c => c.id !== id));
   };
+  
+  // Loyalty
+  const [redeemPoints, setRedeemPoints] = useState(0);
+  const clientLoyaltyBalance = clientType === 'existing' ? 320 : 0; // Mock balance for existing client
 
-  const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+  const subtotal = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
   const tax = subtotal * 0.13;
-  const total = subtotal + tax;
+  let total = subtotal + tax;
+  const loyaltyDiscount = redeemPoints / 100;
+  total = Math.max(0, total - loyaltyDiscount);
 
   const handleCheckout = async () => {
     if (cart.length === 0) return toast.error("Cart is empty");
@@ -75,6 +81,7 @@ export default function PointOfSale() {
       const payload = {
         clientPersonId: null, // Walk-in for now
         paymentMethod,
+        redeemPoints,
         lineItems: cart.map(item => ({
           name: item.name,
           amount: item.price,
@@ -169,7 +176,7 @@ export default function PointOfSale() {
           
           <div className="mt-4 flex bg-gray-100 dark:bg-gray-800 p-1 rounded-xl">
             <button 
-              onClick={() => setClientType('walk-in')}
+              onClick={() => { setClientType('walk-in'); setRedeemPoints(0); }}
               className={\`flex-1 py-2 text-sm font-medium rounded-lg flex items-center justify-center gap-2 transition-colors \${clientType === 'walk-in' ? 'bg-white dark:bg-gray-700 shadow-sm' : 'text-gray-500'}\`}
             ><User className="w-4 h-4"/> Walk-In</button>
             <button 
@@ -177,6 +184,26 @@ export default function PointOfSale() {
               className={\`flex-1 py-2 text-sm font-medium rounded-lg flex items-center justify-center gap-2 transition-colors \${clientType === 'existing' ? 'bg-white dark:bg-gray-700 shadow-sm' : 'text-gray-500'}\`}
             ><Search className="w-4 h-4"/> Client</button>
           </div>
+          {clientType === 'existing' && (
+            <div className="mt-4 p-3 bg-brand-50 dark:bg-brand-900/20 border border-brand-200 dark:border-brand-800 rounded-xl flex justify-between items-center">
+              <div>
+                <p className="text-sm font-bold text-brand-700 dark:text-brand-300">Emma Watson</p>
+                <p className="text-xs text-brand-600/70">{clientLoyaltyBalance} Points Available</p>
+              </div>
+              <div className="text-right flex items-center gap-2">
+                <input 
+                  type="number" 
+                  min="0" 
+                  max={clientLoyaltyBalance}
+                  value={redeemPoints}
+                  onChange={(e) => setRedeemPoints(Math.min(clientLoyaltyBalance, Number(e.target.value)))}
+                  className="w-20 p-1.5 text-sm bg-white dark:bg-gray-800 border border-brand-200 rounded text-center outline-none"
+                  placeholder="0"
+                />
+                <span className="text-xs font-bold text-brand-600">Redeem</span>
+              </div>
+            </div>
+          )}
         </div>
 
         <div className="flex-1 overflow-y-auto p-6 space-y-4">
@@ -219,6 +246,12 @@ export default function PointOfSale() {
               <span>Tax (13%)</span>
               <span>$\${tax.toFixed(2)}</span>
             </div>
+            {loyaltyDiscount > 0 && (
+              <div className="flex justify-between text-brand-500 text-sm font-bold">
+                <span>Loyalty Discount ({redeemPoints} pts)</span>
+                <span>-$\${loyaltyDiscount.toFixed(2)}</span>
+              </div>
+            )}
             <div className="flex justify-between text-xl font-bold text-gray-900 dark:text-white pt-3 border-t border-gray-200 dark:border-gray-700">
               <span>Total</span>
               <span>$\${total.toFixed(2)}</span>

@@ -14,6 +14,7 @@ import Integrations from "./pages/Integrations/Integrations";
 import PointOfSale from "./pages/POS/PointOfSale";
 import StaffPayroll from "./pages/Payroll/StaffPayroll";
 import Campaigns from "./pages/Marketing/Campaigns";
+import LoyaltyRewards from "./pages/Loyalty/LoyaltyRewards";
 import BookingPortal from "./pages/Public/BookingPortal";
 import AcademyEnrollment from "./pages/Public/AcademyEnrollment";
 import Videos from "./pages/UiElements/Videos";
@@ -185,6 +186,7 @@ export default function App() {
                   <Route path="/pos" element={<ProtectedRoute action="read" subject="system"><PointOfSale /></ProtectedRoute>} />
                   <Route path="/payroll" element={<ProtectedRoute action="read" subject="system"><StaffPayroll /></ProtectedRoute>} />
                   <Route path="/marketing" element={<ProtectedRoute action="read" subject="system"><Campaigns /></ProtectedRoute>} />
+                  <Route path="/loyalty" element={<ProtectedRoute action="read" subject="system"><LoyaltyRewards /></ProtectedRoute>} />
                   <Route path="/system/integrations" element={<ProtectedRoute action="manage" subject="system"><Integrations /></ProtectedRoute>} />
                   
                   <Route path="/approvals" element={<ProtectedRoute action="read" subject="ApprovableDocument"><Approvals /></ProtectedRoute>} />
