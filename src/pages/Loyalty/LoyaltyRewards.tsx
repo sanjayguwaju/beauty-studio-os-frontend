@@ -81,7 +81,7 @@ export default function LoyaltyRewards() {
               {leaderboard.map((client, index) => (
                 <div key={client._id} className="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-700">
                   <div className="flex items-center gap-4">
-                    <div className={\`w-8 h-8 rounded-full flex items-center justify-center font-bold \${index === 0 ? 'bg-yellow-100 text-yellow-600' : index === 1 ? 'bg-gray-200 text-gray-600' : index === 2 ? 'bg-orange-100 text-orange-700' : 'bg-brand-50 text-brand-600'}\`}>
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold \${index === 0 ? 'bg-yellow-100 text-yellow-600' : index === 1 ? 'bg-gray-200 text-gray-600' : index === 2 ? 'bg-orange-100 text-orange-700' : 'bg-brand-50 text-brand-600'}`}>
                       {index + 1}
                     </div>
                     <div>
@@ -140,7 +140,7 @@ export default function LoyaltyRewards() {
                         )}
                       </td>
                       <td className="px-6 py-4 text-right">
-                        <span className={\`font-bold text-lg \${t.type === 'earn' ? 'text-green-600' : 'text-purple-600'}\`}>
+                        <span className={`font-bold text-lg \${t.type === 'earn' ? 'text-green-600' : 'text-purple-600'}`}>
                           {t.type === 'earn' ? '+' : '-'}{t.points}
                         </span>
                       </td>

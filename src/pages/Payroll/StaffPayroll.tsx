@@ -84,7 +84,7 @@ export default function StaffPayroll() {
         return;
       }
       
-      await api.post(\`/billing/commissions/\${id}/pay\`);
+      await api.post(`/billing/commissions/\${id}/pay`);
       toast.success("Marked as paid");
       fetchCommissions();
     } catch (error) {

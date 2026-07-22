@@ -99,7 +99,7 @@ export default function AcademyEnrollment() {
                 {courses.map(course => (
                   <label 
                     key={course.id}
-                    className={\`flex items-center justify-between p-4 rounded-xl border-2 cursor-pointer transition-all \${selectedCourseId === course.id ? 'border-brand-500 bg-brand-50 dark:bg-brand-900/20' : 'border-gray-200 dark:border-gray-700 hover:border-brand-300'}\`}
+                    className={`flex items-center justify-between p-4 rounded-xl border-2 cursor-pointer transition-all \${selectedCourseId === course.id ? 'border-brand-500 bg-brand-50 dark:bg-brand-900/20' : 'border-gray-200 dark:border-gray-700 hover:border-brand-300'}`}
                   >
                     <div className="flex items-center gap-4">
                       <input 

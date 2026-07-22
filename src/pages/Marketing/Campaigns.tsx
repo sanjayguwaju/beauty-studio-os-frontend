@@ -135,7 +135,7 @@ export default function Campaigns() {
                   <td className="px-6 py-4">
                     <div className="flex items-center gap-2">
                       <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 max-w-[100px]">
-                        <div className="bg-brand-500 h-2 rounded-full" style={{ width: \`\${camp.totalTarget > 0 ? (camp.sentCount / camp.totalTarget) * 100 : 0}%\` }}></div>
+                        <div className="bg-brand-500 h-2 rounded-full" style={{ width: `\${camp.totalTarget > 0 ? (camp.sentCount / camp.totalTarget) * 100 : 0}%` }}></div>
                       </div>
                       <span className="text-xs font-bold">{camp.sentCount} / {camp.totalTarget}</span>
                     </div>
@@ -198,7 +198,7 @@ export default function Campaigns() {
 
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Message Template (WhatsApp)</label>
-                  <p className="text-xs text-gray-500 mb-2">Use <code className="bg-gray-200 dark:bg-gray-700 px-1 rounded">{{name}}</code> to personalize the message.</p>
+                  <p className="text-xs text-gray-500 mb-2">Use <code className="bg-gray-200 dark:bg-gray-700 px-1 rounded">{"{{name}}"}</code> to personalize the message.</p>
                   <textarea 
                     required rows={6}
                     value={newCampaign.messageTemplate} onChange={e => setNewCampaign({...newCampaign, messageTemplate: e.target.value})}

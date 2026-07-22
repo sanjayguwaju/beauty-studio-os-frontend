@@ -27,7 +27,7 @@ export default function Messages() {
     try {
       const newStatus = isBotActive ? 'paused' : 'active';
       // In a real scenario, you'd pass the actual conversation ID from selectedChat
-      await api.patch(\`/integrations/conversations/\${selectedChat}/bot-status\`, { botStatus: newStatus });
+      await api.patch(`/integrations/conversations/\${selectedChat}/bot-status`, { botStatus: newStatus });
       setIsBotActive(!isBotActive);
     } catch (error) {
       console.error('Failed to toggle bot status', error);
@@ -100,7 +100,7 @@ export default function Messages() {
               <div className="flex items-center gap-4 text-gray-500">
                 <button 
                   onClick={toggleBot}
-                  className={\`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-colors \${isBotActive ? 'bg-brand-100 text-brand-700 dark:bg-brand-900/30 dark:text-brand-400' : 'bg-gray-100 text-gray-500 dark:bg-gray-800 dark:text-gray-400'}\`}
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-colors \${isBotActive ? 'bg-brand-100 text-brand-700 dark:bg-brand-900/30 dark:text-brand-400' : 'bg-gray-100 text-gray-500 dark:bg-gray-800 dark:text-gray-400'}`}
                 >
                   <Bot className="w-4 h-4" />
                   {isBotActive ? 'Autopilot ON' : 'Autopilot OFF'}

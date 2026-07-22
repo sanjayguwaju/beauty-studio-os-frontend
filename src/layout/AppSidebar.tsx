@@ -21,7 +21,6 @@ import {
   FolderIcon,
   EnvelopeIcon,
   ChatIcon,
-  WalletIcon,
 } from "../icons";
 import { useSidebar } from "../context/SidebarContext";
 import { useTenant } from "../context/TenantContext";
@@ -58,7 +57,7 @@ const navItems: NavItem[] = [
     subject: "system",
   },
   {
-    icon: <WalletIcon />,
+    icon: <BoxCubeIcon />,
     name: "Payroll",
     path: "/payroll",
     subject: "system",

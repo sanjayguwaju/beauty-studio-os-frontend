@@ -98,10 +98,10 @@ export default function BookingPortal() {
         {/* Progress Bar */}
         <div className="flex justify-between items-center mb-8 relative">
           <div className="absolute left-0 top-1/2 w-full h-1 bg-gray-200 dark:bg-gray-700 -z-10 -translate-y-1/2 rounded-full"></div>
-          <div className={\`absolute left-0 top-1/2 h-1 bg-brand-500 -z-10 -translate-y-1/2 rounded-full transition-all duration-300\`} style={{ width: \`\${((step - 1) / 2) * 100}%\` }}></div>
+          <div className={`absolute left-0 top-1/2 h-1 bg-brand-500 -z-10 -translate-y-1/2 rounded-full transition-all duration-300`} style={{ width: `\${((step - 1) / 2) * 100}%` }}></div>
           
           {[1, 2, 3].map(i => (
-            <div key={i} className={\`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm transition-colors \${step >= i ? 'bg-brand-500 text-white shadow-lg' : 'bg-white dark:bg-gray-800 text-gray-400 border-2 border-gray-200 dark:border-gray-700'}\`}>
+            <div key={i} className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm transition-colors \${step >= i ? 'bg-brand-500 text-white shadow-lg' : 'bg-white dark:bg-gray-800 text-gray-400 border-2 border-gray-200 dark:border-gray-700'}`}>
               {i}
             </div>
           ))}
@@ -152,7 +152,7 @@ export default function BookingPortal() {
                       <button
                         key={time}
                         onClick={() => setSelectedTime(time)}
-                        className={\`p-3 rounded-xl font-bold border-2 transition-colors \${selectedTime === time ? 'border-brand-500 bg-brand-50 text-brand-600' : 'border-gray-100 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-300'}\`}
+                        className={`p-3 rounded-xl font-bold border-2 transition-colors \${selectedTime === time ? 'border-brand-500 bg-brand-50 text-brand-600' : 'border-gray-100 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-300'}`}
                       >
                         {time}
                       </button>

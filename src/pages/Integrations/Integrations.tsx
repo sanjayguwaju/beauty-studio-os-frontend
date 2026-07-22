@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { MessageSquare, Instagram, Facebook, RefreshCcw, CheckCircle, Smartphone } from 'lucide-react';
-import api from '../../utils/api';
+import { MessageSquare, CheckCircle, Smartphone } from 'lucide-react';
+import api from '../../api/axios';
 
 export default function Integrations() {
   const [whatsappStatus, setWhatsappStatus] = useState<'disconnected' | 'connecting' | 'connected'>('disconnected');
@@ -103,7 +103,7 @@ export default function Integrations() {
         <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 shadow-sm opacity-60">
           <div className="flex items-center gap-4 mb-6">
             <div className="w-12 h-12 bg-pink-100 text-pink-600 rounded-xl flex items-center justify-center">
-              <Instagram className="w-6 h-6" />
+              <MessageSquare className="w-6 h-6" />
             </div>
             <div>
               <h3 className="text-lg font-bold text-gray-900 dark:text-white">Instagram</h3>
@@ -122,7 +122,7 @@ export default function Integrations() {
         <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 shadow-sm opacity-60">
           <div className="flex items-center gap-4 mb-6">
             <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center">
-              <Facebook className="w-6 h-6" />
+              <MessageSquare className="w-6 h-6" />
             </div>
             <div>
               <h3 className="text-lg font-bold text-gray-900 dark:text-white">Facebook</h3>

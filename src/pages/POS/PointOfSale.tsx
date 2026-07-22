@@ -96,7 +96,7 @@ export default function PointOfSale() {
       setCart([]);
       
       // Auto-trigger PDF download
-      window.open(\`http://localhost:5000/api/v1/billing/invoices/\${invoiceId}/pdf\`, '_blank');
+      window.open(`http://localhost:5000/api/v1/billing/invoices/\${invoiceId}/pdf`, '_blank');
       
     } catch (error) {
       console.error(error);
@@ -120,15 +120,15 @@ export default function PointOfSale() {
             <div className="flex bg-gray-100 dark:bg-gray-800 p-1 rounded-xl">
               <button 
                 onClick={() => setFilter('all')}
-                className={\`px-4 py-1.5 rounded-lg text-sm font-medium transition-colors \${filter === 'all' ? 'bg-white dark:bg-gray-700 shadow-sm' : 'text-gray-500'}\`}
+                className={`px-4 py-1.5 rounded-lg text-sm font-medium transition-colors \${filter === 'all' ? 'bg-white dark:bg-gray-700 shadow-sm' : 'text-gray-500'}`}
               >All</button>
               <button 
                 onClick={() => setFilter('service')}
-                className={\`px-4 py-1.5 rounded-lg text-sm font-medium transition-colors \${filter === 'service' ? 'bg-white dark:bg-gray-700 shadow-sm' : 'text-gray-500'}\`}
+                className={`px-4 py-1.5 rounded-lg text-sm font-medium transition-colors \${filter === 'service' ? 'bg-white dark:bg-gray-700 shadow-sm' : 'text-gray-500'}`}
               >Services</button>
               <button 
                 onClick={() => setFilter('product')}
-                className={\`px-4 py-1.5 rounded-lg text-sm font-medium transition-colors \${filter === 'product' ? 'bg-white dark:bg-gray-700 shadow-sm' : 'text-gray-500'}\`}
+                className={`px-4 py-1.5 rounded-lg text-sm font-medium transition-colors \${filter === 'product' ? 'bg-white dark:bg-gray-700 shadow-sm' : 'text-gray-500'}`}
               >Retail</button>
             </div>
           </div>
@@ -177,11 +177,11 @@ export default function PointOfSale() {
           <div className="mt-4 flex bg-gray-100 dark:bg-gray-800 p-1 rounded-xl">
             <button 
               onClick={() => { setClientType('walk-in'); setRedeemPoints(0); }}
-              className={\`flex-1 py-2 text-sm font-medium rounded-lg flex items-center justify-center gap-2 transition-colors \${clientType === 'walk-in' ? 'bg-white dark:bg-gray-700 shadow-sm' : 'text-gray-500'}\`}
+              className={`flex-1 py-2 text-sm font-medium rounded-lg flex items-center justify-center gap-2 transition-colors \${clientType === 'walk-in' ? 'bg-white dark:bg-gray-700 shadow-sm' : 'text-gray-500'}`}
             ><User className="w-4 h-4"/> Walk-In</button>
             <button 
               onClick={() => setClientType('existing')}
-              className={\`flex-1 py-2 text-sm font-medium rounded-lg flex items-center justify-center gap-2 transition-colors \${clientType === 'existing' ? 'bg-white dark:bg-gray-700 shadow-sm' : 'text-gray-500'}\`}
+              className={`flex-1 py-2 text-sm font-medium rounded-lg flex items-center justify-center gap-2 transition-colors \${clientType === 'existing' ? 'bg-white dark:bg-gray-700 shadow-sm' : 'text-gray-500'}`}
             ><Search className="w-4 h-4"/> Client</button>
           </div>
           {clientType === 'existing' && (
@@ -261,21 +261,21 @@ export default function PointOfSale() {
           <div className="grid grid-cols-3 gap-2 mb-4">
             <button 
               onClick={() => setPaymentMethod('card')}
-              className={\`flex flex-col items-center justify-center p-3 rounded-xl border-2 transition-colors \${paymentMethod === 'card' ? 'border-brand-500 bg-brand-50 dark:bg-brand-900/20 text-brand-600' : 'border-gray-200 dark:border-gray-700 hover:border-brand-300'}\`}
+              className={`flex flex-col items-center justify-center p-3 rounded-xl border-2 transition-colors \${paymentMethod === 'card' ? 'border-brand-500 bg-brand-50 dark:bg-brand-900/20 text-brand-600' : 'border-gray-200 dark:border-gray-700 hover:border-brand-300'}`}
             >
               <CreditCard className="w-6 h-6 mb-1" />
               <span className="text-xs font-semibold">Card</span>
             </button>
             <button 
               onClick={() => setPaymentMethod('cash')}
-              className={\`flex flex-col items-center justify-center p-3 rounded-xl border-2 transition-colors \${paymentMethod === 'cash' ? 'border-brand-500 bg-brand-50 dark:bg-brand-900/20 text-brand-600' : 'border-gray-200 dark:border-gray-700 hover:border-brand-300'}\`}
+              className={`flex flex-col items-center justify-center p-3 rounded-xl border-2 transition-colors \${paymentMethod === 'cash' ? 'border-brand-500 bg-brand-50 dark:bg-brand-900/20 text-brand-600' : 'border-gray-200 dark:border-gray-700 hover:border-brand-300'}`}
             >
               <Banknote className="w-6 h-6 mb-1" />
               <span className="text-xs font-semibold">Cash</span>
             </button>
             <button 
               onClick={() => setPaymentMethod('qr')}
-              className={\`flex flex-col items-center justify-center p-3 rounded-xl border-2 transition-colors \${paymentMethod === 'qr' ? 'border-brand-500 bg-brand-50 dark:bg-brand-900/20 text-brand-600' : 'border-gray-200 dark:border-gray-700 hover:border-brand-300'}\`}
+              className={`flex flex-col items-center justify-center p-3 rounded-xl border-2 transition-colors \${paymentMethod === 'qr' ? 'border-brand-500 bg-brand-50 dark:bg-brand-900/20 text-brand-600' : 'border-gray-200 dark:border-gray-700 hover:border-brand-300'}`}
             >
               <QrCode className="w-6 h-6 mb-1" />
               <span className="text-xs font-semibold">QR Code</span>
